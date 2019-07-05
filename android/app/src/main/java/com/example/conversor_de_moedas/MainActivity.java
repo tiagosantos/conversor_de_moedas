@@ -1,4 +1,4 @@
-package com.example.conversor_de_moedas;
+package com.sertaodigital.conversor_de_moedas;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
