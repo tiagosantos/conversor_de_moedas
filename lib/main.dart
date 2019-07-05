@@ -12,7 +12,7 @@ void main() async {
         debugShowCheckedModeBanner: false,
         home: Home(),
         theme: ThemeData(
-          hintColor: Colors.amberAccent,
+          hintColor: Colors.tealAccent[700],
           primaryColor: Colors.white
         ),
     ));
@@ -68,11 +68,14 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text("\$ Conversor de moedas \$"),
+        title: Text(
+          "\$ Conversor de moedas \$",
+          style: TextStyle(color: Colors.white,)
+        ),
         centerTitle: true,
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.tealAccent[700],
       ),
       body: FutureBuilder<Map>(
         future: getData(),
@@ -83,7 +86,7 @@ class _HomeState extends State<Home> {
               return Center(
                 child: Text("Carregando Dados...",
                   style: TextStyle(
-                    color: Colors.amberAccent,
+                    color: Colors.tealAccent[700],
                     fontSize: 25,
                   ),
                   textAlign: TextAlign.center,
@@ -94,7 +97,7 @@ class _HomeState extends State<Home> {
                 return Center(
                   child: Text("Erro ao carregar dados :().",
                     style: TextStyle(
-                      color: Colors.amberAccent,
+                      color: Colors.tealAccent[700],
                       fontSize: 25,
                     ),
                     textAlign: TextAlign.center,
@@ -112,13 +115,26 @@ class _HomeState extends State<Home> {
                       Icon(
                         Icons.monetization_on, 
                         size: 150, 
-                        color: Colors.amberAccent,
+                        color: Colors.tealAccent[700],
                       ),
                       buildTextField("Reais","R\$ ", realController, _realChanged),
                       Divider(),
                       buildTextField("Dólares","US\$ ", dolarController, _dolarChanged),
                       Divider(),
                       buildTextField("Euros","€ ", euroController, _euroChanged),
+                      Center(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+                          child: Text("Desenvolvido por ontiago@gmail.com",
+                            style: TextStyle(
+                              color: Colors.tealAccent[700],
+                              fontSize: 16,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ),
+
                     ],
                   ),
                 );
@@ -145,13 +161,13 @@ Widget buildTextField(
       labelText: label,
       labelStyle: TextStyle(
         fontSize: 25,
-        color: Colors.amberAccent,
+        color: Colors.tealAccent[700],
       ),
       border: OutlineInputBorder(),
       prefixText: prefix, 
     ),
       style: TextStyle(
-        color: Colors.amberAccent,
+        color: Colors.tealAccent[700],
         fontSize: 25
       ),
       onChanged: function,
